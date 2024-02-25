@@ -53,7 +53,7 @@ variable "adbappsecret" {
 variable "adbappclientid" {   
     sensitive = true
     type = string
-    default = "cloudtechstack-adappclientid"
+    default = "cloudtechstack-adbappclientid"
 }
 variable "adbapptenantid" {   
     sensitive = true
