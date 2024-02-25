@@ -58,7 +58,7 @@ variable "adbappclientid" {
 variable "adbapptenantid" {   
     sensitive = true
     type = string
-    default = "cloudtechstack-adbtenantid"
+    default = "cloudtechstack-adbapptenantid"
 }
 
 variable "adbclustername" {   

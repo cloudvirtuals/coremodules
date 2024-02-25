@@ -235,7 +235,7 @@ resource "databricks_cluster" "dbcluster01" {
     "fs.azure.account.auth.type.${var.adbstgaccname}.dfs.core.windows.net": "OAuth"
     "fs.azure.account.oauth.provider.type.${var.adbstgaccname}.dfs.core.windows.net": "org.apache.hadoop.fs.azurebfs.oauth2.ClientCredsTokenProvider"
     "fs.azure.account.oauth2.client.id.${var.adbstgaccname}.dfs.core.windows.net": "${data.azurerm_key_vault_secret.databricksappclientid.value}"
-    "fs.azure.account.oauth2.client.secret.${var.adbstgaccname}.dfs.core.windows.net": "{{secrets/${var.dbwscope}/${var.secretsname["databricksappsecret"]}}}"
+    "fs.azure.account.oauth2.client.secret.${var.adbstgaccname}.dfs.core.windows.net": "${data.azurerm_key_vault_secret.databricksappsecret.value}"
     "fs.azure.account.oauth2.client.endpoint.${var.adbstgaccname}.dfs.core.windows.net": "https://login.microsoftonline.com/${data.azurerm_key_vault_secret.tenantid.value}/oauth2/token"
   }
 
