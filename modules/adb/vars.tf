@@ -68,6 +68,6 @@ variable "adbclustername" {
 }
 variable "noworkers" {   
     sensitive = true
-    type = integer
-    default = 1
+    type = string
+    default = "1"
 }
