@@ -71,3 +71,8 @@ variable "noworkers" {
     type = string
     default = "1"
 }
+ variable "node_type_id" {   
+    sensitive = true
+    type = string
+    default = "Standard_DS3_v2"
+}
