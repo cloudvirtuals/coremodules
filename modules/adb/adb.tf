@@ -223,7 +223,7 @@ resource "databricks_secret_scope" "dbwscope" {
 resource "databricks_cluster" "dbcluster01" {
   depends_on              = [ databricks_secret_scope.dbwscope, data.azurerm_key_vault_secret.databricksappsecret ]
   cluster_name            = var.adbclustername
-  num_workers             = 0
+  num_workers             = var.noworkers 
   spark_version           = data.databricks_spark_version.latest.id # Other possible values ("13.3.x-scala2.12", "11.2.x-cpu-ml-scala2.12", "7.0.x-scala2.12")
   node_type_id            = data.databricks_node_type.smallest.id # Other possible values ("Standard_F4", "Standard_DS3_v2")
   autotermination_minutes = 20

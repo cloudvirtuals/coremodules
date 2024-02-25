@@ -66,3 +66,8 @@ variable "adbclustername" {
     type = string
     default = "cloudtechstack-adbcluster"
 }
+variable "noworkers" {   
+    sensitive = true
+    type = integer
+    default = 1
+}
