@@ -48,17 +48,17 @@ variable "adbstgcgold" {
 variable "adbappsecret" {   
     sensitive = true
     type = string
-    default = "cloudtechstack-adbstgcgold"
+    default = "cloudtechstack-adbappsecret"
 }
 variable "adbappclientid" {   
     sensitive = true
     type = string
-    default = "cloudtechstack-adbstgcgold"
+    default = "cloudtechstack-adappclientid"
 }
 variable "adbapptenantid" {   
     sensitive = true
     type = string
-    default = "cloudtechstack-adbstgcgold"
+    default = "cloudtechstack-adbtenantid"
 }
 
 variable "adbclustername" {   
