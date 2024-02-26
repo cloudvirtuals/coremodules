@@ -1,13 +1,8 @@
-# main.tf
-
-provider "azurerm" {
-  features = {}
-}
 
 # Create main resource group
 resource "azurerm_resource_group" "rgdata01" {
   name     = "adf-${var.orgname}-${var.env}-rg"
-  location = "${var.default_location}"
+  location = "${var,default_location}"
 }
 
 # Reference to an existing Azure Subnet
