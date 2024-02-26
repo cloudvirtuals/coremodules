@@ -1,23 +1,3 @@
-resource "azurerm_data_factory" "labcloudvirtual-datafactory" {
-  name                = var.orgname
-  location            = var.default_location
-  resource_group_name = var.rgname
- 
-  github_configuration {
-    account_name = "cloudvirtuals"
-    branch_name = "main"
-    git_url = "https://github.com/cloudvirtuals"
-    repository_name = "lambdatest"
-    root_folder = "/"
-  }
-
-  tags = {
-        creator = "Terraform"
-        project = var.orgname
-  }
-}
-
-
 # main.tf
 
 provider "azurerm" {
