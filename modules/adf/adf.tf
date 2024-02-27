@@ -20,7 +20,7 @@ resource "azurerm_data_factory" "adf" {
 }
 
 resource "azurerm_storage_account" "adfstgacc" {
-  name                     = "adfstg-${var.orgname}"
+  name                     = "adfstg${var.orgname}"
   resource_group_name      = azurerm_resource_group.rgdata01.name
   location                 = azurerm_resource_group.rgdata01.location
   account_kind             = "BlobStorage"
