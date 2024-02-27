@@ -33,7 +33,6 @@ resource "azurerm_data_factory_managed_private_endpoint" "adf_endpoint" {
   name                = "adf-integration-endpoint"
   data_factory_id   = azurerm_data_factory.adf.id
   target_resource_id = azurerm_storage_account.adfstgacc.id
-  subnet_id = data.azurerm_subnet.PaaS-subnet1.id
 }
 
 # Create a Self-Hosted Integration Runtime linked to the private endpoint
