@@ -9,7 +9,7 @@ resource "azurerm_resource_group" "rgdata01" {
 data "azurerm_subnet" "PaaS-subnet1" {
   name                 = "PaaS-subnet1"
   virtual_network_name = "PaaSvnet"
-  resource_group_name  = ${var.orgname}-net-rg
+  resource_group_name  = "${var.orgname}-net-rg"
 }
 
 # Create an Azure Data Factory
