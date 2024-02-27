@@ -8,7 +8,7 @@ resource "azurerm_resource_group" "rgdata01" {
 # Reference to an existing Azure Subnet
 data "azurerm_subnet" "PaaS-subnet1" {
   name                 = "PaaS-subnet1"
-  virtual_network_name = "PaasVnet"
+  virtual_network_name = "PaaSvnet"
   resource_group_name  = azurerm_resource_group.rgdata01.name
 }
 
