@@ -7,9 +7,8 @@ variable "location" {
   default = "eastus2"
 }
 
-variable "naming_prefix" {
+variable "orgname" {
   type    = string
-  default = "ctslabs"
 }
 
 
