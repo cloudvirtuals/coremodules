@@ -1,23 +1,33 @@
-variable "rgname" {
-  type = string
-}
-variable "vnetname" {
-  type = string
-}
-variable "subnet1name" {
-  type = string
-}
-variable "subnet2name" {
-  type = string
-}
-variable "default_location" {
-  type = string
+# modules/vnet/variables.tf
+
+variable "vnet_name" {
+  description = "Name of the Azure VNet"
 }
 
+variable "address_space" {
+  description = "Address space for the Azure VNet"
+  type        = list(string)
+}
+
+variable "location" {
+  description = "Azure region"
+}
+
+variable "resource_group_name" {
+  description = "Name of the Azure resource group"
+}
 variable "orgname" {
-  type = string
+  description = "Name of the Azure resource group"
 }
-
-variable "env" {
-  type    = string
+variable "subnet1_cidr" {
+  description = "Name of the Azure resource group"
+}
+variable "subnet1_name" {
+  description = "Name of the Azure resource group"
+}
+variable "subnet2_name" {
+  description = "Name of the Azure resource group"
+}
+variable "subnet2_cidr" {
+  description = "Name of the Azure resource group"
 }
