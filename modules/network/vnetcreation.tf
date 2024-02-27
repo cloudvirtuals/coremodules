@@ -1,6 +1,6 @@
 
 resource "azurerm_resource_group" "rg" {
-  name     = "cloudtechstackrg"
+  name     = "${var.orgname}-net-rg"
   location = "eastus2"
 }
 
