@@ -32,7 +32,6 @@ resource "azurerm_storage_account" "adfstgacc" {
 resource "azurerm_data_factory_managed_private_endpoint" "adf_endpoint" {
   name                = "adf-integration-endpoint"
   data_factory_id   = azurerm_data_factory.adf.id
-  resource_group_name = azurerm_resource_group.rgdata01.name
   target_resource_id = azurerm_storage_account.adfstgacc.id
   subnet_id = data.azurerm_subnet.PaaS-subnet1.id
 }
