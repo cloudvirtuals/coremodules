@@ -4,13 +4,13 @@ resource "azurerm_resource_group" "rg" {
   location = var.location
 }
 
-resource "azurerm_network_security_group" "PaaS1nsg" {
-  name                = var.PaaS1nsg_name
+resource "azurerm_network_security_group" "PaaSnsgone" {
+  name                = var.paas1nsg_name
   location            = azurerm_resource_group.rg.location
   resource_group_name = azurerm_resource_group.rg.name
 }
-resource "azurerm_network_security_group" "PaaS2nsg" {
-  name                = var.PaaS2nsg_name
+resource "azurerm_network_security_group" "PaaSnsgtwo" {
+  name                = var.paas2nsg_name
   location            = azurerm_resource_group.rg.location
   resource_group_name = azurerm_resource_group.rg.name
 }
@@ -25,12 +25,12 @@ resource "azurerm_virtual_network" "PaaSvnet" {
   subnet {
     name           = var.subnet1_name
     address_prefix = var.subnet1_cidr
-    security_group = azurerm_network_security_group.PaaS1nsg.id
+    security_group = azurerm_network_security_group.PaaSnsgone.id
   }
 
   subnet {
     name           = var.subnet2_name
     address_prefix = var.subnet2_cidr
-    security_group = azurerm_network_security_group.PaaS2nsg.id
+    security_group = azurerm_network_security_group.PaaSnsgtwo.id
   }
 }
