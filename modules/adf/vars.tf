@@ -18,3 +18,12 @@ variable "default_location" {
     sensitive = true
     type = string
 }
+variable "subnet1_name" {   
+    sensitive = true
+    type = string
+}
+variable "vnet_name" {   
+    sensitive = true
+    type = string
+}
+

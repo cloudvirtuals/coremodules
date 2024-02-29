@@ -8,9 +8,9 @@ resource "azurerm_resource_group" "rgdata01" {
 # Reference to an existing Azure Subnet
 data "azurerm_subnet" "PaaS-subnet1" {
   name                 = "PaaS-subnet1"
-  virtual_network_name = "PaaSvnet"
+  virtual_network_name = var.vnet_name
   #resource_group_name  = "${var.orgname}-net-rg"
-  resource_group_name  = "cloudtechstackrg"
+  resource_group_name  = var.subnet1_name
 }
 
 # Create an Azure Data Factory
