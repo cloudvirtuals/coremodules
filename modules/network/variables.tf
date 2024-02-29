@@ -23,10 +23,10 @@ variable "resource_group_name" {
 variable "subnet1_cidr" {
   description = "Name of the Azure resource group"
 }
-variable "paas1nsg_name" {
+variable "paas1_nsg_name" {
   description = "Name of the Azure resource group"
 }
-variable "paas2nsg_name" {
+variable "paas2_nsg_name" {
   description = "Name of the Azure resource group"
 }
 variable "subnet1_name" {

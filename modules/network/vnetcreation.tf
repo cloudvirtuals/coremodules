@@ -5,15 +5,50 @@ resource "azurerm_resource_group" "rg" {
 }
 
 resource "azurerm_network_security_group" "PaaSnsgone" {
-  name                = var.paas1nsg_name
+  name                = var.paas1_nsg_name
   location            = azurerm_resource_group.rg.location
   resource_group_name = azurerm_resource_group.rg.name
+
+  security_rule {
+    name                       = "test123"
+    priority                   = 100
+    direction                  = "Inbound"
+    access                     = "Allow"
+    protocol                   = "Tcp"
+    source_port_range          = "*"
+    destination_port_range     = "*"
+    source_address_prefix      = "*"
+    destination_address_prefix = "*"
+  }
+
+  tags = {
+    environment = "Production"
+  }
 }
+
 resource "azurerm_network_security_group" "PaaSnsgtwo" {
-  name                = var.paas2nsg_name
+  name                = var.paas2_nsg_name
   location            = azurerm_resource_group.rg.location
   resource_group_name = azurerm_resource_group.rg.name
+
+  security_rule {
+    name                       = "test123"
+    priority                   = 100
+    direction                  = "Inbound"
+    access                     = "Allow"
+    protocol                   = "Tcp"
+    source_port_range          = "*"
+    destination_port_range     = "*"
+    source_address_prefix      = "*"
+    destination_address_prefix = "*"
+  }
+
+  tags = {
+    environment = "Production"
+  }
 }
+
+
 
 resource "azurerm_virtual_network" "PaaSvnet" {
   name                = var.vnet_name
