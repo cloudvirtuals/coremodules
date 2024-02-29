@@ -6,12 +6,12 @@ resource "azurerm_resource_group" "rgdata01" {
 }
 
 # Reference to an existing Azure Subnet
-data "azurerm_subnet" "PaaS-subnet1" {
-  name                 = "PaaS-subnet1"
-  virtual_network_name = var.vnet_name
+#data "azurerm_subnet" "PaaS-subnet1" {
+#  name                 = "PaaS-subnet1"
+#  virtual_network_name = var.vnet_name
   #resource_group_name  = "${var.orgname}-net-rg"
-  resource_group_name  = var.subnet1_name
-}
+#  resource_group_name  = var.rgname
+#}
 
 # Create an Azure Data Factory
 resource "azurerm_data_factory" "adf" {
