@@ -1,37 +1,36 @@
-
+# Modules for Network v1.0.1
 resource "azurerm_resource_group" "rg" {
-  #name     = "${var.orgname}-net-rg"
-  name     = "cloudtechstackrg"
-  location = "eastus2"
+  name     = "${var.orgname}-net-rg"
+  location = var.location
 }
 
 resource "azurerm_network_security_group" "PaaS1nsg" {
-  name                = "PaaS1nsg"
+  name                = var.PaaS1nsg_name
   location            = azurerm_resource_group.rg.location
   resource_group_name = azurerm_resource_group.rg.name
 }
 resource "azurerm_network_security_group" "PaaS2nsg" {
-  name                = "PaaS2nsg"
+  name                = var.PaaS2nsg_name
   location            = azurerm_resource_group.rg.location
   resource_group_name = azurerm_resource_group.rg.name
 }
 
 resource "azurerm_virtual_network" "PaaSvnet" {
-  name                = "PaaSvnet"
+  name                = var.vnet_name
   location            = azurerm_resource_group.rg.location
   resource_group_name = azurerm_resource_group.rg.name
-  address_space       = ["10.0.0.0/16"]
+  address_space       = var.address_space
   dns_servers         = ["10.0.0.4", "10.0.0.5"]
 
   subnet {
-    name           = "PaaS-subnet1"
-    address_prefix = "10.0.1.0/24"
+    name           = var.subnet1_name
+    address_prefix = var.subnet1_cidr
     security_group = azurerm_network_security_group.PaaS1nsg.id
   }
 
   subnet {
-    name           = "PaaS-subnet2"
-    address_prefix = "10.0.2.0/24"
+    name           = var.subnet2_name
+    address_prefix = var.subnet2_cidr
     security_group = azurerm_network_security_group.PaaS2nsg.id
   }
 }

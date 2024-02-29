@@ -1,6 +1,10 @@
-# modules/vnet/variables.tf
+# modules/vnet/variables.tf - v1.0.1
 
 variable "vnet_name" {
+  description = "Name of the Azure VNet"
+}
+
+variable "orgname" {
   description = "Name of the Azure VNet"
 }
 
@@ -16,10 +20,13 @@ variable "location" {
 variable "resource_group_name" {
   description = "Name of the Azure resource group"
 }
-variable "orgname" {
+variable "subnet1_cidr" {
   description = "Name of the Azure resource group"
 }
-variable "subnet1_cidr" {
+variable "PaaS1nsg_name" {
+  description = "Name of the Azure resource group"
+}
+variable "PaaS2nsg_name" {
   description = "Name of the Azure resource group"
 }
 variable "subnet1_name" {
