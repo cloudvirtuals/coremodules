@@ -18,6 +18,7 @@ resource "azurerm_data_factory" "adf" {
   name                = "adf-${var.orgname}"
   resource_group_name = azurerm_resource_group.rgdata01.name
   location            = azurerm_resource_group.rgdata01.location
+  managed_virtual_network_enabled = true
 }
 
 resource "azurerm_storage_account" "adfstgacc" {
@@ -34,7 +35,9 @@ resource "azurerm_data_factory_managed_private_endpoint" "adf_endpoint" {
   name                = "adf-integration-endpoint"
   data_factory_id   = azurerm_data_factory.adf.id
   target_resource_id = azurerm_storage_account.adfstgacc.id
+  subresource_name   = "blob"
 }
+
 
 # Create a Self-Hosted Integration Runtime linked to the private endpoint
 #resource "azurerm_data_factory_managed_private_endpoint_connection" "adf_connection" {
