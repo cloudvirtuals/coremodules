@@ -1,9 +1,12 @@
-
+resource "azurerm_resource_group" "rgdata01" {
+  name     = "stg-${var.orgname}-${var.env}-rg"
+  location = var.default_location
+}
 
 
 resource "azurerm_storage_account" "cloudtechstack-adf-stg" {
     name = var.adfstgname
-    resource_group_name = var.rgname
+    resource_group_name = rgdata01.name
     location = var.location
     account_tier = "Standard"
     account_replication_type = "LRS"
