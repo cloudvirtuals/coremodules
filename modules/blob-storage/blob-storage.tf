@@ -6,7 +6,7 @@ resource "azurerm_resource_group" "rgdata01" {
 
 resource "azurerm_storage_account" "cloudtechstack-adf-stg" {
     name = var.adfstgname
-    resource_group_name = rgdata01.name
+    resource_group_name = azurerm_resource_group.rgdata01.name
     location = var.location
     account_tier = "Standard"
     account_replication_type = "LRS"
