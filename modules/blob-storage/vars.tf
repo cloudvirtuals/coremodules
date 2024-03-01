@@ -1,7 +1,7 @@
 variable "env" {
   type = string
 }
-variable "default_location" {
+variable "location" {
   type = string
 }
 variable "rgname" {

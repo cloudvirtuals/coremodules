@@ -1,6 +1,6 @@
 resource "azurerm_resource_group" "rgdata01" {
   name     = "stg-${var.orgname}-${var.env}-rg"
-  location = var.default_location
+  location = var.location
 }
 
 
