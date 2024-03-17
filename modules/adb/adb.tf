@@ -72,7 +72,7 @@ resource "azurerm_databricks_workspace" "dbwdata01" {
   name                = "${var.orgname}${var.env}dwdata01"
   resource_group_name = azurerm_resource_group.rgdata01.name
   location            = azurerm_resource_group.rgdata01.location
-  sku                 = "standard"
+  sku                 = "premium"
 
   tags = {
     environment = "${var.env}"
