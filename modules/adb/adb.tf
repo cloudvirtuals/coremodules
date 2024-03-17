@@ -209,14 +209,14 @@ data "azurerm_key_vault_secret" "tenantid" {
 
 # Create Databricks Scope
 resource "databricks_secret_scope" "dbwscope" {
-  depends_on = [ azurerm_databricks_workspace.dbwdata01, azurerm_key_vault.kvdatabricks ]
+  #depends_on = [ azurerm_databricks_workspace.dbwdata01, azurerm_key_vault.kvdatabricks ]
   name = var.dbwscope
   initial_manage_principal = "users"
   
-  keyvault_metadata {
-    resource_id = azurerm_key_vault.kvdatabricks.id
-    dns_name    = azurerm_key_vault.kvdatabricks.vault_uri
-  }
+  #keyvault_metadata {
+  #  resource_id = azurerm_key_vault.kvdatabricks.id
+  #  dns_name    = azurerm_key_vault.kvdatabricks.vault_uri
+  #}
 }
 
 # Create Single Node Cluster
